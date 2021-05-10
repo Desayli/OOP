@@ -1,0 +1,61 @@
+# Project: ATM System
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = Account.o ATM.o BankDatabase.o BalanceInquiry.o CashDispenser.o Deposit.o Keypad.o Screen.o Transaction.o Withdrawal.o ATMCaseStudy.o DepositSlot.o
+LINKOBJ  = Account.o ATM.o BankDatabase.o BalanceInquiry.o CashDispenser.o Deposit.o Keypad.o Screen.o Transaction.o Withdrawal.o ATMCaseStudy.o DepositSlot.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib32" -static-libgcc -m32
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = "ATM System.exe"
+CXXFLAGS = $(CXXINCS) -m32
+CFLAGS   = $(INCS) -m32
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+Account.o: Account.cpp
+	$(CPP) -c Account.cpp -o Account.o $(CXXFLAGS)
+
+ATM.o: ATM.cpp
+	$(CPP) -c ATM.cpp -o ATM.o $(CXXFLAGS)
+
+BankDatabase.o: BankDatabase.cpp
+	$(CPP) -c BankDatabase.cpp -o BankDatabase.o $(CXXFLAGS)
+
+BalanceInquiry.o: BalanceInquiry.cpp
+	$(CPP) -c BalanceInquiry.cpp -o BalanceInquiry.o $(CXXFLAGS)
+
+CashDispenser.o: CashDispenser.cpp
+	$(CPP) -c CashDispenser.cpp -o CashDispenser.o $(CXXFLAGS)
+
+Deposit.o: Deposit.cpp
+	$(CPP) -c Deposit.cpp -o Deposit.o $(CXXFLAGS)
+
+Keypad.o: Keypad.cpp
+	$(CPP) -c Keypad.cpp -o Keypad.o $(CXXFLAGS)
+
+Screen.o: Screen.cpp
+	$(CPP) -c Screen.cpp -o Screen.o $(CXXFLAGS)
+
+Transaction.o: Transaction.cpp
+	$(CPP) -c Transaction.cpp -o Transaction.o $(CXXFLAGS)
+
+Withdrawal.o: Withdrawal.cpp
+	$(CPP) -c Withdrawal.cpp -o Withdrawal.o $(CXXFLAGS)
+
+ATMCaseStudy.o: ATMCaseStudy.cpp
+	$(CPP) -c ATMCaseStudy.cpp -o ATMCaseStudy.o $(CXXFLAGS)
+
+DepositSlot.o: DepositSlot.cpp
+	$(CPP) -c DepositSlot.cpp -o DepositSlot.o $(CXXFLAGS)
